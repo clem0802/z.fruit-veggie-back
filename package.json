@@ -1,0 +1,32 @@
+{
+  "name": "z.fruit-veggie-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clem0802/z.fruit-veggie-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clem0802/z.fruit-veggie-back/issues"
+  },
+  "homepage": "https://github.com/clem0802/z.fruit-veggie-back#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "shortid": "^2.2.16",
+    "sqlite3": "^5.0.2",
+    "knex": "^0.95.15"
+  }
+}
