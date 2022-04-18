@@ -11,41 +11,35 @@ async function addUser(user){
     // check if this "1st username" === created "user.username" and return back to me
     return await db('users').insert(user,['id','username'])
 }
-
 /*---------------------"GET"---------------------*/
 function getAllUsers(){
     return db("users") // db is my whole database, there is also "contents", but here only want "users"
     .orderBy("id","desc") // so the latest registered users will be on the top of the page: id10, id9, id8 ... id1
 }
-
 /*---------------------"GET"---------------------*/
 function findUserByUsername(username){
     return db('users')
     .where({username:username})
     .first() // .first() stops when finds it
 }
-
 /*---------------------"GET"---------------------*/
 function findUserById(id){
     return db('users')
     .where({id:id})
     .first() // .first() stops when finds it
 }
-
 /*---------------------"DELETE"---------------------*/
 function removeUser(id){
     return db('users')
     .where({id:id}) // "users" table
     .del() 
 }
-
 /*---------------------"PATCH-user"---------------------*/
 function updateUser(id,newUser){ // newUser === REQ.BODY
     return db("users")
     .where({id:id})
     .update(newUser) // send the new info
 }
-
 /*---------------------"JOIN => to COMBINE 2 tables"---------------------*/
 // without this JOIN table, we will have to make 2 API calls
 function getUserContents (user_id){
@@ -83,7 +77,7 @@ function removeContent(id){
 }
 /*---------------------"PATCH"---------------------*/
 function updateContent(id,newContent){ // newContent === REQ.BODY
-    return db("conents")
+    return db("contents")
     .where({id:id})
     .update(newContent) // send the new info
 }
