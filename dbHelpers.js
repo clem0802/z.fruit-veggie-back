@@ -94,6 +94,12 @@ function groupContents(){
     )
 }
 
+/*---------------------"GET" (for contentdetails PAGE))---------------------*/
+function findContentByTitle(title){
+    return db('contents')
+    .where({title:title})
+    .first() // .first() stops when finds it
+}
 
 
 /*----------------------------------------------------------*/
@@ -110,5 +116,6 @@ module.exports = {
     addContent,
     removeContent,
     updateContent,
-    groupContents
+    groupContents,
+    findContentByTitle
 }
