@@ -9,7 +9,7 @@ async function addUser(user){
     // await db('users').insert(user) // commented for DEPLOY
     // return db('users').where({username:user.username}) // commented for DEPLOY
     // check if this "1st username" === created "user.username" and return back to me
-    return await db('users').insert(user,['id','username'])
+    return await db('users').insert(user,['id','username','imageUrl'])
 }
 /*---------------------"GET"---------------------*/
 function getAllUsers(){
