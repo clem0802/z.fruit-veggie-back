@@ -61,7 +61,7 @@ function getUserContents (user_id){
 /*---------------------"GET"---------------------*/
 function getAllContents(){
     return db('contents')
-    .orderBy("id","desc")
+    .orderBy("title","desc")
 }
 /*---------------------"CREATE"---------------------*/
 async function addContent(newContent,user_id){
@@ -99,10 +99,16 @@ function findContentByTitle(title){
     .where({title:title})
     .first() // .first() stops when finds it
 }
-/*---------------------"GET"---------------------*/
+/*---------------------"GET only fruit"---------------------*/
 function getOnlyFruits(){
     return db("contents")
     .where({category:fruit})  // category === fruit
+    .orderBy("category")
+}
+/*---------------------"GET only veggie"---------------------*/
+function getOnlyVeggies(){
+    return db("contents")
+    .where({category:veggie})  // category === fruit
     .orderBy("category")
 }
 
@@ -117,11 +123,12 @@ module.exports = {
     removeUser,
     updateUser,
     getUserContents,
-    getAllContents,
+    getAllContents, // (all fruggies)
     addContent,
     removeContent,
     updateContent,
     groupContents,
     findContentByTitle,
-    getOnlyFruits
+    getOnlyFruits, // (only fruit)
+    getOnlyVeggies // (only veggie)
 }
