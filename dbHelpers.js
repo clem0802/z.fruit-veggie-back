@@ -61,7 +61,7 @@ function getUserContents (user_id){
 /*---------------------"GET"---------------------*/
 function getAllContents(){
     return db('contents')
-    .orderBy("title","desc")
+    .orderBy("title")
 }
 /*---------------------"CREATE"---------------------*/
 async function addContent(newContent,user_id){
@@ -103,13 +103,13 @@ function findContentByTitle(title){
 function getOnlyFruits(){
     return db("contents")
     .where({category:fruit})  // category === fruit
-    .orderBy("category")
+    .orderBy("title")
 }
 /*---------------------"GET only veggie"---------------------*/
 function getOnlyVeggies(){
     return db("contents")
     .where({category:veggie})  // category === fruit
-    .orderBy("category")
+    .orderBy("title")
 }
 
 
