@@ -93,12 +93,17 @@ function groupContents(){
         "contents.title"
     )
 }
-
 /*---------------------"GET" (for contentdetails PAGE))---------------------*/
 function findContentByTitle(title){
     return db('contents')
     .where({title:title})
     .first() // .first() stops when finds it
+}
+/*---------------------"GET"---------------------*/
+function getOnlyFruits(){
+    return db("contents")
+    .where({category:fruit})  // category === fruit
+    .orderBy("category")
 }
 
 
@@ -117,5 +122,6 @@ module.exports = {
     removeContent,
     updateContent,
     groupContents,
-    findContentByTitle
+    findContentByTitle,
+    getOnlyFruits
 }
