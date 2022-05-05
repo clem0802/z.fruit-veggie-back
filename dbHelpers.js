@@ -61,7 +61,7 @@ function getUserContents (user_id){
 /*---------------------"GET"---------------------*/
 function getAllContents(){
     return db('contents')
-    .orderBy("id")
+    .orderBy("title")
 }
 /*---------------------"CREATE"---------------------*/
 async function addContent(newContent,user_id){
