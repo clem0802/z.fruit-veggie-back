@@ -57,7 +57,13 @@ router.post('/users/login',(req,res)=>{
         }
     })
     .catch(error=>{
-        res.status(500).json(error)
+        // res.status(500).json(error)
+        // below added 2022.05.05 (elif)
+        if(error.errno === 19){
+            resstatus(400).json({message:"Username already exists."})
+        } else {
+            res.status(500).json(error)
+        }
     })
 })
 
