@@ -34,9 +34,12 @@ router.post('/users/:id/contents',(req,res)=>{ // a content is created by a user
          if(!newContent.title || !newContent.description){
              res.status(400).json({message: "All fields must be complete."})
          }
-        //  if(newContent.description.length > 120){
-        //      res.status(400).json({message: "Description too long."})
-        //  }
+
+         if(newContent.description.length < 125){
+             res.status(200).json()
+         } else {
+            res.status(400).json({message: "Description too long."})
+         }
 
      Fruggies.addContent(newContent,id)
      .then(content=>{  // send it to Front
