@@ -37,9 +37,9 @@ router.post('/users/:id/contents',(req,res)=>{ // a content is created by a user
 
 
 
-    // if(newContent.description.length > 125){
-    // res.status(400).json({message: "Description too long."})
-    // } 
+    if(newContent.description.length > 125){
+    res.status(400).json({message: "Description too long."})
+    } 
     
 
 
@@ -49,7 +49,7 @@ router.post('/users/:id/contents',(req,res)=>{ // a content is created by a user
      })
      .catch(error=>{
          res.status(500).json({message: "Server failed"})
-     })
+     }) 
    })
 })
 
