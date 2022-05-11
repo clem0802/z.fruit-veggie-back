@@ -61,7 +61,7 @@ function getUserContents (user_id){
 /*---------------------"GET"---------------------*/
 function getAllContents(){
     return db('contents')
-    .orderBy("title")
+    .orderBy("id","desc")
 }
 /*---------------------"CREATE"---------------------*/
 async function addContent(newContent,user_id){
@@ -99,6 +99,8 @@ function findContentByTitle(title){
     .where({title:title})
     .first() // .first() stops when finds it
 }
+
+
 /*---------------------"GET only fruit"---------------------*/
 function getOnlyFruits(){
     return db("contents")
