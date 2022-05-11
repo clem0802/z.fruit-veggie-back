@@ -37,7 +37,7 @@ router.post('/users/:id/contents',(req,res)=>{ // a content is created by a user
 
 
 
-    if(newContent.description.length > 125){
+    if(newContent.description.length > 170){
     res.status(400).json({message: "Description too long."})
     } 
     
