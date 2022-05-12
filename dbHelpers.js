@@ -58,7 +58,7 @@ function getUserContents (user_id){
 
 
 // (2) (CONTENTS table)
-/*---------------------"GET by ltitle, alphabetically"---------------------*/
+/*---------------------"GET by title, alphabetically"---------------------*/
 // function getAllContents(){
 //     return db('contents')
 //     .orderBy("title")
