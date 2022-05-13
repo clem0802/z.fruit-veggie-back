@@ -109,7 +109,7 @@ function findContentByTitle(title,id){
     // )
 
     .where({title:title}) 
-    .and({id:id})
+    .and({content_id:content_id})
     .first() 
 }
 
