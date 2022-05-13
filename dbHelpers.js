@@ -105,7 +105,9 @@ function findContentByTitle(title){
     // .where({id:id})
     .select(
         "contents.id",
-        "contents.title"
+        "contents.title",
+        "contents.category",
+        "contents.description"
     )
     .where({title:title})
     .first() 
