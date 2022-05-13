@@ -110,7 +110,6 @@ function findContentByTitle(title){
         "contents.imageUrl"
     )
     .where({title:title})
-    .and({id:id})
     .first() 
 }
 
