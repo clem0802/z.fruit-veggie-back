@@ -103,6 +103,7 @@ function findContentByTitle(title){
     return db('contents')
 
     .where({title:title}) 
+    .and({id:id}) 
     .first() 
 }
 
