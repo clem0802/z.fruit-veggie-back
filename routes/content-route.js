@@ -103,7 +103,7 @@ router.get('/contentdetails1/:title',(req,res)=>{  // a URL that changes dynamic
         if(title){
             res.status(200).json(title)
         } else{
-            res.status(404).json({message:"Content does not exist, NO GET"})
+            res.status(404).json({message:"Content does not exist, NO GET-1"})
         }
     })
     .catch(error=>{
@@ -120,7 +120,7 @@ router.get('/contentdetails2/:id',(req,res)=>{  // a URL that changes dynamicall
         if(content){
             res.status(200).json(content)
         } else{
-            res.status(404).json({message:"Content does not exist, NO GET"})
+            res.status(404).json({message:"Content does not exist, NO GET-2"})
         }
     })
     .catch(error=>{
