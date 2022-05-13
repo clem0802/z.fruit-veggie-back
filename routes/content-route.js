@@ -95,19 +95,31 @@ router.get('/contentNumbers',(req,res)=>{
 })
 
 /*---------------(6)(GET)(for contentdetails PAGE)---------------*/ 
-router.get('/contentdetails/:title',(req,res)=>{  // a URL that changes dynamically
-    const {title} = req.params
-    Fruggies.findContentByTitle(title)
-    .then(title=>{
-        if(title.id=title.id){
+router.get('/contents/:id',(req,res)=>{  // a URL that changes dynamically
+    const {id} = req.params
+    Fruggies.findContentByTitle(id,req.body)
+    .then(content=>{
             res.status(200).json(title)
-        } else{
-            res.status(404).json({message:"Content does not exist, NO GET"})
-        }
     })
     .catch(error=>{
         res.status(500).json(error)
     })
+ 
+
+
+// router.get('/contentdetails/:title',(req,res)=>{  // a URL that changes dynamically
+//     const {title} = req.params
+//     Fruggies.findContentByTitle(title)
+//     .then(title=>{
+//         if(title){
+//             res.status(200).json(title)
+//         } else{
+//             res.status(404).json({message:"Content does not exist, NO GET"})
+//         }
+//     })
+//     .catch(error=>{
+//         res.status(500).json(error)
+//     })
 })  
 
 
