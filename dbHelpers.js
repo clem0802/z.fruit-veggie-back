@@ -99,9 +99,9 @@ function groupContents(){
     )
 }
 /*---------------------"GET" (for contentdetails PAGE))---------------------*/
-function findContentByTitle(title,id){
+function findContentByTitle(title){
     return db('contents')
-    .select({id:id})
+
     .where({title:title}) 
     .first() 
 }
