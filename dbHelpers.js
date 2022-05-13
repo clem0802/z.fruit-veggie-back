@@ -102,7 +102,7 @@ function groupContents(){
 function findContentByTitle(title){
     return db('contents')
     .where({title:title})
-    .first() // .first() stops when finds it
+    .first(content.id=content.id) // .first() stops when finds it
 }
 
 
