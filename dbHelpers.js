@@ -104,13 +104,13 @@ function findContentByTitle(title){
     // .select({title:title})
     // .where({id:id})
     .select(
-        "contents.id",
         "contents.title",
         "contents.category",
         "contents.description",
         "contents.imageUrl"
     )
-    .where({id:id})
+    .where({title:title})
+    .and({id:id})
     .first() 
 }
 
