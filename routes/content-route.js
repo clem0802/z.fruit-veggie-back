@@ -95,7 +95,7 @@ router.get('/contentNumbers',(req,res)=>{
 })
 
 /*---------------(6)(GET)(for contentdetails, route1)---------------*/ 
-router.get('/contentdetails/:title',(req,res)=>{  // a URL that changes dynamically
+router.get('/contentdetails1/:title',(req,res)=>{  // a URL that changes dynamically
     const {title} = req.params
 
     Fruggies.findContentByTitle(title)
@@ -112,7 +112,7 @@ router.get('/contentdetails/:title',(req,res)=>{  // a URL that changes dynamica
 })
 
 /*---------------(7)(GET)(for contentdetails, route2)---------------*/ 
-router.get('/contentdetails/:id',(req,res)=>{  // a URL that changes dynamically
+router.get('/contentdetails2/:id',(req,res)=>{  // a URL that changes dynamically
     const {id} = req.params
 
     Fruggies.findContentById(id)
