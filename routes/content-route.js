@@ -118,7 +118,7 @@ router.get('/contentdetails/:id',(req,res)=>{  // a URL that changes dynamically
     Fruggies.findContentById(id)
     .then(content=>{
         if(content){
-            res.status(200).json(title)
+            res.status(200).json(content)
         } else{
             res.status(404).json({message:"Content does not exist, NO GET"})
         }
