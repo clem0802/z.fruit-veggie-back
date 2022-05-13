@@ -101,10 +101,11 @@ function groupContents(){
 /*---------------------"GET" (for contentdetails PAGE))---------------------*/
 function findContentByTitle(title){
     return db('contents')
-    .where({id:id})
-    .and({title:title})
-    // .and({id:id})
-    .first() // .first() stops when finds it
+    .where({title:title})
+    // .where({id:id})
+    // .and({title:title})
+    .in({id:id})
+    .first() 
 }
 
 
