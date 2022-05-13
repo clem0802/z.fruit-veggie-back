@@ -99,7 +99,7 @@ function groupContents(){
     )
 }
 /*---------------------"GET" (for contentdetails PAGE))---------------------*/
-function findContentByTitle(title){
+function findContentByTitle(title,id){
     return db('contents')
     // .select(
     //     "contents.title",
@@ -109,7 +109,7 @@ function findContentByTitle(title){
     // )
 
     .where({title:title}) 
-    .in({id:id})
+    .and({id:id})
     .first() 
 }
 
