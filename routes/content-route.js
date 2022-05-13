@@ -106,9 +106,9 @@ router.get('/contentNumbers',(req,res)=>{
 //     })
  
 
-router.get('/contentdetails/:title',(req,res)=>{  // a URL that changes dynamically
+router.get('/contentdetails/:title/:id',(req,res)=>{  // a URL that changes dynamically
     const {title} = req.params
-    const {id} = req.params //
+    const {id} = req.params
     Fruggies.findContentByTitle(title,id)
     .then(title=>{
         if(title){
