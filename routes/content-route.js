@@ -112,7 +112,7 @@ router.get('/contentdetails/:title/:id',(req,res)=>{  // a URL that changes dyna
     Fruggies.findContentByTitle(title,id)
     .then(title,id=>{
         if(title,id){
-            res.status(200).json(title)
+            res.status(200).json(title,id)
         } else{
             res.status(404).json({message:"Content does not exist, NO GET"})
         }
