@@ -95,7 +95,7 @@ router.get('/contentNumbers',(req,res)=>{
 })
 
 /*---------------(6)(GET)(for contentdetails PAGE)---------------*/ 
-router.get('/contents/:id',(req,res)=>{  // a URL that changes dynamically
+router.get('credentials/contents/:id',(req,res)=>{  // a URL that changes dynamically
     const {id} = req.params
     Fruggies.findContentByTitle(id,req.body)
     .then(content=>{
@@ -105,7 +105,6 @@ router.get('/contents/:id',(req,res)=>{  // a URL that changes dynamically
         res.status(500).json(error)
     })
  
-
 
 // router.get('/contentdetails/:title',(req,res)=>{  // a URL that changes dynamically
 //     const {title} = req.params
