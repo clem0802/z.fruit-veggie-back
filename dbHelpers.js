@@ -103,13 +103,15 @@ function findContentByTitle(title){
     return db('contents')
     // .select({title:title})
     // .where({id:id})
+    // .where({title:title}) //
     .select(
         "contents.title",
         "contents.category",
         "contents.description",
         "contents.imageUrl"
     )
-    .where({title:title})
+    .groupBy({title:title})
+    .where({id:id})
     .first() 
 }
 
