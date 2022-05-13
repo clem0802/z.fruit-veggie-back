@@ -94,7 +94,7 @@ router.get('/contentNumbers',(req,res)=>{
     })
 })
 
-/*---------------(6)(GET)(for contentdetails PAGE)---------------*/ 
+/*---------------(6)(GET)(for contentdetails, route1)---------------*/ 
 router.get('/contentdetails/:title',(req,res)=>{  // a URL that changes dynamically
     const {title} = req.params
 
@@ -109,7 +109,24 @@ router.get('/contentdetails/:title',(req,res)=>{  // a URL that changes dynamica
     .catch(error=>{
         res.status(500).json(error)
     })
-})  
+})
+
+/*---------------(7)(GET)(for contentdetails, route2)---------------*/ 
+router.get('/contentdetails/:id',(req,res)=>{  // a URL that changes dynamically
+    const {id} = req.params
+
+    Fruggies.findContentById(id)
+    .then(content=>{
+        if(content){
+            res.status(200).json(title)
+        } else{
+            res.status(404).json({message:"Content does not exist, NO GET"})
+        }
+    })
+    .catch(error=>{
+        res.status(500).json(error)
+    })
+}) 
 
 
 module.exports = router;

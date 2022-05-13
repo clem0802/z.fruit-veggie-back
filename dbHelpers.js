@@ -101,8 +101,13 @@ function groupContents(){
 /*---------------------"GET" (for contentdetails PAGE))---------------------*/
 function findContentByTitle(title){
     return db('contents')
-
     .where({title:title}) 
+    .first() 
+}
+
+function findContentById(id){
+    return db('contents')
+    .where({id:id}) 
     .first() 
 }
 
@@ -137,6 +142,7 @@ module.exports = {
     updateContent,
     groupContents,
     findContentByTitle,
+    findContentById,
     getOnlyFruits, // (only fruit)
     getOnlyVeggies // (only veggie)
 }
