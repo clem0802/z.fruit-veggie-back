@@ -86,7 +86,7 @@ function updateContent(id,newContent){ // newContent === REQ.BODY
     .where({id:id})
     .update(newContent) // send the new info
 }
-/*---------------------"GET" (GROUP BY)---------------------*/
+/*---------------------"GET" (GROUP BY) not used yet---------------------*/
 // the same "title" fruggies will not repeat but show only ONCE
 // "COUNT()" will show how many times the fruggie has been used-created, the MOST WRITTEN ones
 // "SELECT()", the output will be much shorter, only the columns we need
@@ -102,8 +102,8 @@ function groupContents(){
 function findContentByTitle(title){
     return db('contents')
     .where({title:title})
-    .and({id:id})
-    // .first() // .first() stops when finds it
+    // .and({id:id})
+    .first({id:id}) // .first() stops when finds it
 }
 
 
