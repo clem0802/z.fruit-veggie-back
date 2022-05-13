@@ -99,7 +99,7 @@ function groupContents(){
     )
 }
 /*---------------------"GET" (for contentdetails PAGE))---------------------*/
-function findContentByTitle(title,id){
+function findContentByTitle(title,content_id){
     return db('contents')
     // .select(
     //     "contents.title",
